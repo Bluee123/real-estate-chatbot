@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Sweet Home - Real Estate Solutions</title>
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/1174511028/ja/%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%83%95%E3%82%A9%E3%83%88/%E6%89%8B%E3%81%AE%E7%A9%8D%E3%81%BF%E9%87%8D%E3%81%AD%E7%B5%B1%E4%B8%80%E3%81%A8%E3%83%81%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%97%E3%83%88.jpg?s=1024x1024&w=is&k=20&c=prq5PtaNqzksCJBDO_n7ENcPO12FPhoLnz1dPhtL8Wc=');
+            background-size: cover;  /* Cover the viewport */
+            background-repeat: no-repeat;  /* Do not repeat the image */
+            background-position: center center;  /* Center the background */
+            font-family: Arial, sans-serif;
+        }
+        
+        .content {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <h2>Welcome to Home Sweet Home</h2>
+        <p>We are a premier real estate agency with over a decade of experience in helping families find their dream homes. From cozy apartments to luxurious villas, we have an extensive listing for all your needs.</p>
+        <img src="https://images.pexels.com/photos/2097616/pexels-photo-2097616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Beautiful House" width="450">
+        <p>Feel free to ask our chatbot below any questions you might have!</p>
+    </div>
+
+    <script>
+        !(function() {
+            let e = document.createElement("script"),
+                t = document.head || document.getElementsByTagName("head")[0];
+            e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js", // Make sure to replace 1.0.0 with your desired version
+                e.async = true,
+                e.onload = () => {
+                    window.WebChat.default({
+                        customData: {
+                            language: "en"
+                        },
+                        socketUrl: "http://localhost:5005", // This should point to your Rasa server
+                        storage: 'none',
+                        // add other props here if needed
+                    }, null);
+                },
+                t.insertBefore(e, t.firstChild);
+        })();
+    </script>
+
+</body>
+
+</html>

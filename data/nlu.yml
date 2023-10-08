@@ -1,0 +1,142 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - alright
+    - ok
+    - great
+    - sure
+    - good
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+
+- intent: provide_business_name
+  examples: |
+    - I am interested in an apartment. Could you tell me the [process](business_name) and requirements
+    - what's the [process](business_name)
+    - I want to know the [process](business_name)
+    - what about the [contract](business_name)
+    - what is the [contract](business_name)
+    - what is the [contract](business_name) like
+    - I'd like to know the terms of the [contract](business_name)
+    - how to [pay](business_name)
+    - What are the terms of [payment](business_name)
+    - What are the [payment](business_name) methods
+    - what about [payment](business_name)
+    - what is your [company](business_name)
+    - what your [company](business_name) do
+    - tell me about your [company](business_name)
+    - what is your [company](business_name) about
+    - what about [property](business_name) management
+    - how about [property](business_name) management
+    - I'd like to [inquire](business_name) the information this apartment.
+    - I'd like to [inquire](business_name) the information this house.
+    - I'd like to [inquire](business_name) the information this villa.
+    - I want to [inquire](business_name) the information this apartment.
+    - Can you help me [inquire](business_name) the information this apartment.
+    - I'd like to [search](business_name) for a house.
+    - I want to [search](business_name) for a house
+    - I want to [search](business_name) for a house fit for my family
+    - I want to make an [appointment](business_name) to see this apartment
+    - Hello, I am interested in this apartment in your company. Can I make an [appointment](business_name) to see it?
+    - I want to make an [appointment](business_name) to see this house
+
+
+- intent: provide_business_type
+  examples: |
+    - I want to [buy](business_type)
+    - I want to [buy](business_type) an apartment
+    - I want to [buy](business_type) a house
+    - [buy](business_type)
+    - I want to [rent](business_type)
+    - I want to [rent](business_type) an apartment
+    - I want to [rent](business_type) a house
+    - [rent](business_type)
+
+- intent: provide_house_code
+  examples: |
+    - house code is [1](house_code)
+    - code is [3](house_code)
+    - [2](house_code)
+    - the code of the house is [26](house_code)
+
+- regex: areaValue
+  examples: |
+    - \d{3,4}    # Matches area values
+- regex: priceValue
+  examples: |
+    - \d{5,9}    # Matches price values
+
+- intent: provide_search_condition
+  examples: |
+    - area is [100-120](number:area), price is [250000-270000](number:price), located in [city center](location)
+    - area for the house is [110-120](number:area), price is [250000-270000](number:price), located in [suburb](location)
+    - area like [130-140](number:area), price is [300000-330000](number:price), located in [city center](location)
+
+- intent: out_of_scope
+  examples: |
+    - I don't know what you're talking about
+    - This isn't relevant
+    - I want to speak to a human
+    - Can I talk to a person?
+    - Not helpful, need a real agent
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  

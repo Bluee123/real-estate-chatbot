@@ -1,0 +1,34 @@
+[
+  {
+    "text": "what is your company",
+    "intent": "company_info",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9874441027641296
+    }
+  },
+  {
+    "text": "what your company do",
+    "intent": "company_info",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8636612892150879
+    }
+  },
+  {
+    "text": "tell me about your company",
+    "intent": "company_info",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4749334454536438
+    }
+  },
+  {
+    "text": "what is your company about",
+    "intent": "company_info",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8564040064811707
+    }
+  }
+]

@@ -1,0 +1,132 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+##回答完用户的问题后，询问是否还需要帮助
+- rule: need help
+  steps:
+  - intent: affirm
+  - action: utter_need_help
+
+##用户咨询公司信息
+- rule: User asks for company info
+  condition:
+    - slot_was_set:
+        - business_name: "company"
+  steps:
+    - action: action_company_info
+
+##用户咨询付款方式
+- rule: User asks for payment
+  condition:
+    - slot_was_set:
+        - business_name: "payment"
+  steps:
+    - action: action_payment_method
+
+##用户咨询物业管理
+- rule: User asks for property management
+  condition:
+    - slot_was_set:
+        - business_name: "property"
+  steps:
+    - action: action_property_management
+
+##用户预约看房
+- rule: User makes an appointment
+  condition:
+    - slot_was_set:
+        - business_name: "appointment"
+  steps:
+    - action: action_make_appointment
+
+
+
+
+##用户明确业务需求为处理流程并选择买房
+- rule: User asks for process and chooses to buy
+  condition:
+    - slot_was_set:
+        - business_name: "process"
+    - slot_was_set:
+        - business_type: "buy"
+  steps:
+    - action: action_buy_process
+
+##用户明确业务需求为处理流程并选择租房
+- rule: User asks for process and chooses to rent
+  condition:
+    - slot_was_set:
+        - business_name: "process"
+    - slot_was_set:
+        - business_type: "rent"
+  steps:
+    - action: action_rent_process
+
+##用户明确业务需求为合同并选择买房
+- rule: User asks for contract and chooses to buy
+  condition:
+    - slot_was_set:
+        - business_name: "contract"
+    - slot_was_set:
+        - business_type: "buy"
+  steps:
+    - action: action_buy_contract
+
+##用户明确业务需求为合同并选择租房
+- rule: User asks for contract and chooses to rent
+  condition:
+    - slot_was_set:
+        - business_name: "contract"
+    - slot_was_set:
+        - business_type: "rent"
+  steps:
+    - action: action_rent_contract
+
+##用户明确业务需求为查询房源信息
+- rule: User asks for house information
+  condition:
+    - slot_was_set:
+        - business_name: "inquire"
+    - slot_was_set:
+        - house_code: True
+  steps:
+    - action: action_show_house_info
+
+##用户明确业务需求为搜索房源
+
+- rule: Collect search criteria and search
+  condition:
+  - slot_was_set:
+      - business_name: "search"
+  steps:
+  - action: action_ask_search_condition
+  - intent: provide_search_condition
+  - action: form_execute_condition
+  - active_loop: form_execute_condition
+  - active_loop: null
+
+- rule: Activate form
+  steps:
+  - intent: provide_search_condition
+  - action: form_execute_condition
+  - active_loop: form_execute_condition
+
+- rule: Submit form
+  condition:
+  - active_loop: form_execute_condition
+  steps:
+  - action: form_execute_condition
+  - active_loop: null
+
+
+  
+
+
+
+

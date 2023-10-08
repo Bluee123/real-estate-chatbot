@@ -1,0 +1,249 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+##用户询问公司信息
+- story: User asks for company info
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        what about your [company](business_name)
+      intent: provide_business_name
+      entities:
+        - business_name: company
+    - action: action_company_info
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户询问付款方式
+- story: User asks for payment
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        what about your [payment](business_name)
+      intent: provide_business_name
+      entities:
+        - business_name: payment
+    - action: action_payment_method
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户询问物业管理
+- story: User asks for property management
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        what about your [property](business_name) management
+      intent: provide_business_name
+      entities:
+        - business_name: property
+    - action: action_property_management
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户明确业务需求为处理流程并选择买房
+- story: User inquires about process1
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        [process](business_name)
+      intent: provide_business_name
+      entities:
+        - business_name: process
+    - action: action_ask_business_type
+    - user: |
+        [buy](business_type)
+      intent: provide_business_type
+      entities:
+        - business_type: buy
+    - action: action_buy_process
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户明确业务需求为处理流程并选择租房
+- story: User inquires about process2
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        [process](business_name)
+      intent: provide_business_name
+      entities:
+        - business_name: process
+    - action: action_ask_business_type
+    - user: |
+        [rent](business_type)
+      intent: provide_business_type
+      entities:
+        - business_type: rent
+    - action: action_rent_process
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户明确业务需求为合同并选择买房
+- story: User inquires about contract1
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        [contract](business_name)
+      intent: provide_business_name
+      entities:
+        - business_name: contract
+    - action: action_ask_business_type
+    - user: |
+        [buy](business_type)
+      intent: provide_business_type
+      entities:
+        - business_type: buy
+    - action: action_buy_contract
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户明确业务需求为合同并选择租房
+- story: User inquires about contract2
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        [contract](business_name)
+      intent: provide_business_name
+      entities:
+        - business_name: contract
+    - action: action_ask_business_type
+    - user: |
+        [rent](business_type)
+      intent: provide_business_type
+      entities:
+        - business_type: rent
+    - action: action_rent_contract
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+
+##用户询问房源信息
+- story: User asks for house info
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        I'd like to [inquire](business_name) the information this apartment.
+      intent: provide_business_name
+      entities:
+        - business_name: inquire
+    - action: action_ask_house_code
+    - user: |
+        house code is [1](house_code)
+      intent: provide_house_code
+      entities:
+        - house_code: 1
+    - action: action_show_house_info
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户搜索房源信息
+- story: User search for house
+  steps:
+    - user: |
+        hi
+      intent: greet
+    - action: action_ask_business_name
+    - user: |
+        I want to [search](business_name) for a house
+      intent: provide_business_name
+      entities:
+        - business_name: search
+    - action: action_ask_search_condition
+    - user: |
+        area for [100-200](area_range),price is [250000-270000](price_range),located in [city center](location)
+      intent: provide_search_condition
+      entities:
+        - area_range: "100-200"
+        - price_range: "250000-270000"
+        - location: "city center"
+    - action: form_execute_condition
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_need_help
+    - user: |
+        no
+      intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye

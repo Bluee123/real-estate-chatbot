@@ -1,0 +1,197 @@
+[
+  {
+    "text": "what about your company",
+    "entities": [
+      {
+        "start": 16,
+        "end": 23,
+        "value": "company",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what about your payment",
+    "entities": [
+      {
+        "start": 16,
+        "end": 23,
+        "value": "payment",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what about your property management",
+    "entities": [
+      {
+        "start": 16,
+        "end": 24,
+        "value": "property",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "process",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "process",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "buy",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "buy",
+        "entity": "business_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "process",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "process",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "rent",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "rent",
+        "entity": "business_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "contract",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "contract",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "buy",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "buy",
+        "entity": "business_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "contract",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "contract",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "rent",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "rent",
+        "entity": "business_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I'd like to inquire the information this apartment.",
+    "entities": [
+      {
+        "start": 12,
+        "end": 19,
+        "value": "inquire",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "house code is 1",
+    "entities": [
+      {
+        "start": 14,
+        "end": 15,
+        "value": "1",
+        "entity": "house_code"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want to search for a house",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "search",
+        "entity": "business_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "area for 100-200,price is 250000-270000,located in city center",
+    "entities": [
+      {
+        "text": "area for 100-200,price is 250000-270000,located in city center",
+        "start": 9,
+        "end": 16,
+        "entity": "area_range",
+        "value": "100-200"
+      },
+      {
+        "text": "area for 100-200,price is 250000-270000,located in city center",
+        "start": 26,
+        "end": 39,
+        "entity": "price_range",
+        "value": "250000-270000"
+      },
+      {
+        "text": "area for 100-200,price is 250000-270000,located in city center",
+        "start": 51,
+        "end": 62,
+        "entity": "location",
+        "value": "city center"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

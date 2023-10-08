@@ -1,0 +1,25 @@
+version: "3.1"
+stories:
+- story: User search for house (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: action_ask_business_name
+  - intent: provide_business_name
+    entities:
+    - business_name: search
+  - slot_was_set:
+    - business_name: search
+  - action: action_ask_search_condition
+  - intent: provide_search_condition
+    entities:
+    - area_range: 100-200
+    - price_range: 250000-270000
+    - location: city center
+  - slot_was_set:
+    - location: city center
+  - action: action_search_house
+  - intent: affirm
+  - action: utter_need_help
+  - intent: deny
+  - action: utter_ask_satisfaction
+  - action: utter_goodbye

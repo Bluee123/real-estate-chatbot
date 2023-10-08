@@ -1,0 +1,182 @@
+version: "3.1"
+
+stories:
+
+##用户咨询公司信息
+- story: User asks for company info
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: company
+    - action: action_company_info
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户咨询付款方式
+- story: User asks for payment
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: payment
+    - action: action_payment_method
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户预约看房
+- story: User makes an appointment
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: appointment
+    - action: action_make_appointment
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+
+##用户明确业务需求为处理流程并选择买房
+- story: User inquires about process1
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: process
+    - action: action_ask_business_type
+    - intent: provide_business_type
+      entities:
+        - business_type: buy
+    - action: action_buy_process
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户明确业务需求为处理流程并选择租房
+- story: User inquires about process2
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: process
+    - action: action_ask_business_type
+    - intent: provide_business_type
+      entities:
+        - business_type: rent
+    - action: action_rent_process
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户明确业务需求为合同并选择买房
+- story: User inquires about contract1
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: contract
+    - action: action_ask_business_type
+    - intent: provide_business_type
+      entities:
+        - business_type: buy
+    - action: action_buy_contract
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户明确业务需求为合同并选择租房
+- story: User inquires about contract2
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: contract
+    - action: action_ask_business_type
+    - intent: provide_business_type
+      entities:
+        - business_type: rent
+    - action: action_rent_contract
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户咨询物业管理
+- story: User asks for property management
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: property
+    - action: action_property_management
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户查询房源信息
+- story: User asks for house info
+  steps:
+    - intent: greet
+    - action: action_ask_business_name
+    - intent: provide_business_name
+      entities:
+        - business_name: inquire
+    - action: action_ask_house_code
+    - intent: provide_house_code
+      entities:
+        - house_code: 1
+    - action: action_show_house_info
+    - intent: affirm
+    - action: utter_need_help
+    - intent: deny
+    - action: utter_ask_satisfaction
+    - action: utter_goodbye
+
+##用户搜索房源信息
+- story: User wants to search for a house 
+  steps:
+  - intent: greet
+  - action: action_ask_business_name
+  - intent: provide_business_name
+    entities:
+    - business_name: search
+  - action: action_ask_search_condition
+  - intent: provide_search_condition
+    entities:
+    - area_range: "100-200"
+    - price_range: "200000-300000"
+    - location: "city center"
+  - action: form_execute_condition
+  - intent: affirm
+  - action: utter_need_help
+  - intent: deny
+  - action: utter_ask_satisfaction
+  - action: utter_goodbye
+
+

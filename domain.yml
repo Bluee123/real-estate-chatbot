@@ -1,0 +1,168 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - company_info
+  - buy_process
+  - rent_process
+  - buy_or_rent
+  - provide_business_type
+  - need_help
+  - ask_satisfaction
+  - ask_user_business
+  - payment_method
+  - buy_contract
+  - rent_contract
+  - provide_business_name
+  - property_management
+  - provide_house_code
+  - ask_house_code
+  - provide_search_condition
+  - out_of_scope
+
+actions:
+  - action_ask_business_name
+  - action_ask_business_type
+  - action_company_info
+  - action_buy_process
+  - action_rent_process
+  - action_buy_contract
+  - action_rent_contract
+  - action_payment_method
+  - action_property_management
+  - action_ask_house_code
+  - action_show_house_info
+  - action_ask_search_condition
+  - form_execute_condition
+  - action_default_fallback
+  - action_make_appointment
+
+
+
+entities:
+  - business_name
+  - business_type
+  - house_code
+  - location
+  - number:
+      roles:
+      - area
+      - price
+
+  
+slots:
+  business_name:
+    type: categorical
+    values:
+      - company
+      - process
+      - contract
+      - payment
+      - property
+      - inquire
+      - search
+      - appoinment
+    mappings:
+      - type: from_entity
+        entity: business_name
+
+
+  business_type:
+    type: categorical
+    values:
+      - buy
+      - rent
+    mappings:
+      - type: from_entity
+        entity: business_type
+
+  house_code:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: house_code
+        
+  area_range:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number
+        role: area
+  price_range:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number
+        role: price
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+
+forms:
+  form_execute_condition:
+    required_slots:
+      - area_range
+      - price_range
+      - location
+
+
+
+
+
+
+
+
+responses:
+  utter_greet:
+  - text: "hey there!"
+
+
+  utter_goodbye:
+  - text: "goodbye :("
+
+
+  utter_company_info:
+  - text: "We are a professional real estate company and currently have offices in 5 of the 7 provinces of the country. We offer a wide range of real estate services, including buying homes, renting homes and consulting information. We provide high quality real estate agency services to help clients meet their needs such as buying and renting."
+
+  utter_buy_or_rent:
+  - text: "Do you want to buy or rent an apartment?"
+
+  utter_buy_process:
+  - text: "First, you need to determine your budget and home purchase needs. Then we can help you search for suitable listings. Once you have selected your desired home, you will need to negotiate a price with the seller and sign a purchase contract. Then, if you need a loan, you need to go through the loan process. Finally, you need to transfer the property and pay the appropriate taxes."
+
+  utter_rent_process:
+  - text: "First you need to determine your budget and housing needs. Then we can help you search for suitable rental properties. In general, you will need to submit a rental application and provide some personal information such as proof of identity, proof of employment and documents such as bank statements. A rental deposit and intermediary fees are also required."
+
+  utter_need_help:
+  - text: "Do you need help with anything else?"
+
+  utter_ask_satisfaction:
+  - text: "Are you satisfied with our service? If you are satisfied, please give five stars!"
+
+  utter_ask_user_business:
+  - text: "What can I do for you?"
+
+  utter_payment_method:
+  - text: "We accept a variety of payment methods, including bank transfer, cheque or electronic payment. The exact payment method will be further negotiated with you when you select the specific service."
+
+  utter_buy_contract:
+  - text: "The contract for the purchase of a house usually includes the delivery time of the house, the price of the house, and the transfer of property rights. Housing prices generally only include the cost of the house itself, and do not include additional fees such as taxes and transfer fees. When purchasing a home, you will need to pay these additional fees, please check with the responsible officer for details."
+
+  utter_rent_contract:
+  - text: "Ok, our lease contract usually includes the rent, lease term, deposit, maintenance responsibility and so on. If you end the lease before the end of the contract, there is usually no refund of the deposit. However, if the contract ends early, part of the deposit may be refunded according to the actual situation, which needs to be decided through consultation with the landlord."
+  
+  utter_property_management:
+  - text: "The service content of the property management company usually includes the daily maintenance, cleaning, safety management, green maintenance, equipment and facilities maintenance of the community or real estate. The specific service content may vary according to different property management companies, you can provide the name of the community or real estate you are concerned about, I can help you to check the relevant information."
+
+  utter_ask_house_code:
+  - text: "Please provide the house code of the house you are interested in."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

@@ -1,0 +1,176 @@
+[
+  {
+    "text": "area is 100-120, price is 250000-270000, located in city center",
+    "entities": [
+      {
+        "start": 8,
+        "end": 15,
+        "value": "100-120",
+        "entity": "area_range"
+      },
+      {
+        "start": 26,
+        "end": 39,
+        "value": "250000-270000",
+        "entity": "price_range"
+      },
+      {
+        "start": 52,
+        "end": 63,
+        "value": "city center",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "price_range",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.5113826990127563,
+        "value": "100-120",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "price_range",
+        "start": 26,
+        "end": 39,
+        "confidence_entity": 0.5087321996688843,
+        "value": "250000-270000",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 52,
+        "end": 63,
+        "confidence_entity": 0.9848968982696533,
+        "value": "city center",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "area for the house is 110-120, price is 250000-270000, located in suburb",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "value": "110-120",
+        "entity": "area_range"
+      },
+      {
+        "start": 40,
+        "end": 53,
+        "value": "250000-270000",
+        "entity": "price_range"
+      },
+      {
+        "start": 66,
+        "end": 72,
+        "value": "suburb",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "price_range",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.5164027214050293,
+        "value": "110-120",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "price_range",
+        "start": 40,
+        "end": 53,
+        "confidence_entity": 0.5519713163375854,
+        "value": "250000-270000",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 66,
+        "end": 72,
+        "confidence_entity": 0.9866118431091309,
+        "value": "suburb",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "area like 130-140, price is 300000-330000, located in city center",
+    "entities": [
+      {
+        "start": 10,
+        "end": 17,
+        "value": "130-140",
+        "entity": "area_range"
+      },
+      {
+        "start": 28,
+        "end": 41,
+        "value": "300000-330000",
+        "entity": "price_range"
+      },
+      {
+        "start": 54,
+        "end": 65,
+        "value": "city center",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "price_range",
+        "start": 10,
+        "end": 17,
+        "confidence_entity": 0.5105185508728027,
+        "value": "130-140",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "price_range",
+        "start": 28,
+        "end": 41,
+        "confidence_entity": 0.5078965425491333,
+        "value": "300000-330000",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "location",
+        "start": 54,
+        "end": 65,
+        "confidence_entity": 0.9848959445953369,
+        "value": "city center",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]
